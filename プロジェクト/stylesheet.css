@@ -1,127 +1,439 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
-:root {
-  /* Updated color tokens to match cat hotel design brief with warm greens and natural tones */
-  --background: oklch(1 0 0); /* #ffffff - Clean white background */
-  --foreground: oklch(0.25 0 0); /* #374151 - Dark gray for text */
-  --card: oklch(0.98 0.02 142); /* #f0fdf4 - Soft light green for cards */
-  --card-foreground: oklch(0.25 0 0); /* #374151 - Text on cards */
-  --popover: oklch(1 0 0); /* #ffffff - Popover background */
-  --popover-foreground: oklch(0.25 0 0); /* #374151 - Text in popovers */
-  --primary: oklch(0.45 0.15 142); /* #15803d - Trust-inspiring green */
-  --primary-foreground: oklch(1 0 0); /* #ffffff - White text on primary */
-  --secondary: oklch(0.75 0.15 85); /* #84cc16 - Playful lime green accent */
-  --secondary-foreground: oklch(0.25 0 0); /* #374151 - Text on secondary */
-  --muted: oklch(0.99 0.01 142); /* #f8fafc - Very light muted background */
-  --muted-foreground: oklch(0.25 0 0); /* #374151 - Text on muted */
-  --accent: oklch(0.75 0.15 85); /* #84cc16 - Accent for playful elements */
-  --accent-foreground: oklch(1 0 0); /* #ffffff - Text on accent */
-  --destructive: oklch(0.55 0.2 15); /* #e63946 - Alert/warning color */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff - Text on destructive */
-  --border: oklch(0.85 0.01 220); /* #d1d5db - Subtle border color */
-  --input: oklch(0.98 0.02 142); /* #f0fdf4 - Input background */
-  --ring: oklch(0.6 0.12 180 / 0.5); /* Focus ring with transparency */
-  --chart-1: oklch(0.75 0.15 85); /* #84cc16 */
-  --chart-2: oklch(0.45 0.15 142); /* #15803d */
-  --chart-3: oklch(0.98 0.02 142); /* #f0fdf4 */
-  --chart-4: oklch(0.25 0 0); /* #374151 */
-  --chart-5: oklch(0.55 0.2 15); /* #e63946 */
-  --radius: 0.5rem; /* Rounded corners for friendly feel */
-  --sidebar: oklch(0.98 0.02 142); /* #f0fdf4 - Sidebar background */
-  --sidebar-foreground: oklch(0.25 0 0); /* #374151 - Sidebar text */
-  --sidebar-primary: oklch(0.45 0.15 142); /* #15803d - Primary sidebar accent */
-  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - Text on primary sidebar */
-  --sidebar-accent: oklch(0.75 0.15 85); /* #84cc16 - Sidebar accent */
-  --sidebar-accent-foreground: oklch(0.25 0 0); /* #374151 - Text on sidebar accent */
-  --sidebar-border: oklch(0.85 0.01 220); /* #d1d5db - Sidebar border */
-  --sidebar-ring: oklch(0.6 0.12 180 / 0.5); /* Sidebar focus ring */
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.dark {
-  /* Updated dark mode colors to maintain cat hotel theme with darker variants */
-  --background: oklch(0.12 0 0); /* Dark background */
-  --foreground: oklch(0.95 0 0); /* Light text */
-  --card: oklch(0.15 0.02 142); /* Dark green card background */
-  --card-foreground: oklch(0.95 0 0); /* Light text on cards */
-  --popover: oklch(0.12 0 0); /* Dark popover */
-  --popover-foreground: oklch(0.95 0 0); /* Light text in popovers */
-  --primary: oklch(0.55 0.15 142); /* Lighter green for dark mode */
-  --primary-foreground: oklch(0.12 0 0); /* Dark text on primary */
-  --secondary: oklch(0.18 0.02 142); /* Dark secondary */
-  --secondary-foreground: oklch(0.95 0 0); /* Light text on secondary */
-  --muted: oklch(0.18 0.02 142); /* Dark muted */
-  --muted-foreground: oklch(0.7 0 0); /* Muted text */
-  --accent: oklch(0.18 0.02 142); /* Dark accent */
-  --accent-foreground: oklch(0.95 0 0); /* Light text on accent */
-  --destructive: oklch(0.4 0.15 15); /* Dark destructive */
-  --destructive-foreground: oklch(0.65 0.2 15); /* Destructive text */
-  --border: oklch(0.18 0.02 142); /* Dark border */
-  --input: oklch(0.18 0.02 142); /* Dark input */
-  --ring: oklch(0.45 0.1 180 / 0.5); /* Dark focus ring */
-  --chart-1: oklch(0.5 0.2 264); /* Dark chart colors */
-  --chart-2: oklch(0.7 0.17 162);
-  --chart-3: oklch(0.77 0.19 70);
-  --chart-4: oklch(0.63 0.27 304);
-  --chart-5: oklch(0.65 0.25 16);
-  --sidebar: oklch(0.15 0.02 142); /* Dark sidebar */
-  --sidebar-foreground: oklch(0.95 0 0); /* Light sidebar text */
-  --sidebar-primary: oklch(0.5 0.2 264); /* Dark sidebar primary */
-  --sidebar-primary-foreground: oklch(0.95 0 0); /* Light text on sidebar primary */
-  --sidebar-accent: oklch(0.18 0.02 142); /* Dark sidebar accent */
-  --sidebar-accent-foreground: oklch(0.95 0 0); /* Light text on sidebar accent */
-  --sidebar-border: oklch(0.18 0.02 142); /* Dark sidebar border */
-  --sidebar-ring: oklch(0.45 0.1 180 / 0.5); /* Dark sidebar focus ring */
+/* 基本スタイル */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
 
-@theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+/* ヘッダー */
+.header {
+  background-color: #2d5a3d;
+  color: white;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #7fb069;
+}
+
+/* メインビジュアル */
+.hero {
+  background: linear-gradient(135deg, #7fb069 0%, #2d5a3d 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: #2d5a3d;
+}
+
+.btn-primary:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #2d5a3d;
+}
+
+/* セクション共通 */
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d5a3d;
+  margin-bottom: 3rem;
+}
+
+/* サービス */
+.services {
+  background-color: #f8f9fa;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d5a3d;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* 施設案内 */
+.facilities-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.facilities-text h3 {
+  font-size: 1.5rem;
+  color: #2d5a3d;
+  margin-bottom: 1.5rem;
+}
+
+.facilities-text ul {
+  list-style: none;
+}
+
+.facilities-text li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.facilities-text li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #7fb069;
+  font-weight: bold;
+}
+
+.facilities-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 料金表 */
+.pricing {
+  background-color: #f8f9fa;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.pricing-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card.featured {
+  border: 3px solid #7fb069;
+  transform: scale(1.05);
+}
+
+.popular {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: #7fb069;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-card h3 {
+  font-size: 1.4rem;
+  color: #2d5a3d;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #7fb069;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-card li {
+  padding: 0.5rem 0;
+  color: #666;
+}
+
+/* お問い合わせ */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  color: #2d5a3d;
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.contact-form {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2d5a3d;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7fb069;
+}
+
+/* フッター */
+.footer {
+  background-color: #2d5a3d;
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 1rem;
+  color: #7fb069;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #7fb069;
+}
+
+.footer-bottom {
+  border-top: 1px solid #4a6b5a;
+  padding-top: 1rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .nav ul {
+    gap: 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .facilities-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 60px 0;
   }
 }
