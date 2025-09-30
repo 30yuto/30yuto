@@ -424,6 +424,9 @@ section {
   .hero {
     padding: 100px 0 60px;
   }
+  .hero-img{
+    
+  }
 
   .hero-content h2 {
     font-size: 1.7rem;
