@@ -7,7 +7,7 @@
 
 /* 基本スタイル */
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #fff;
@@ -382,6 +382,646 @@ section {
   opacity: 0.8;
 }
 
+/* サブページ用のスタイル */
+.page-hero {
+  background: linear-gradient(135deg, #7fb069 0%, #2d5a3d 100%);
+  color: white;
+  padding: 140px 0 80px;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* 企業理念ページ */
+.philosophy-section,
+.mission-section,
+.vision-section,
+.values-section,
+.brand-section {
+  padding: 80px 0;
+}
+
+.philosophy-section {
+  background-color: #f8f9fa;
+}
+
+.philosophy-box {
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.philosophy-box h3 {
+  font-size: 1.8rem;
+  color: #2d5a3d;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.philosophy-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ミッショングリッド */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.mission-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding-top: 3rem;
+}
+
+.mission-number {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  background: #7fb069;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.mission-card h3 {
+  font-size: 1.3rem;
+  color: #2d5a3d;
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ビジョン */
+.vision-section {
+  background-color: #f8f9fa;
+}
+
+.vision-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+}
+
+.vision-item {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.vision-item h3 {
+  font-size: 1.5rem;
+  color: #2d5a3d;
+  margin-bottom: 1.5rem;
+}
+
+.vision-item ul {
+  list-style: none;
+}
+
+.vision-item li {
+  padding: 0.7rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  color: #555;
+  line-height: 1.6;
+}
+
+.vision-item li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #7fb069;
+  font-weight: bold;
+}
+
+/* 価値観グリッド */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  color: #2d5a3d;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ブランドメッセージ */
+.brand-section {
+  background: linear-gradient(135deg, #7fb069 0%, #2d5a3d 100%);
+  color: white;
+}
+
+.brand-message {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.brand-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand-message p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+}
+
+.brand-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* 代表挨拶ページ */
+.greeting-section {
+  padding: 80px 0;
+}
+
+.greeting-content {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.greeting-image {
+  position: sticky;
+  top: 100px;
+}
+
+.greeting-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.greeting-profile {
+  text-align: center;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.greeting-profile h3 {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.greeting-profile h2 {
+  font-size: 1.5rem;
+  color: #2d5a3d;
+  margin-bottom: 0.3rem;
+}
+
+.greeting-profile p {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.greeting-text h2 {
+  font-size: 2rem;
+  color: #2d5a3d;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.greeting-text h3 {
+  font-size: 1.4rem;
+  color: #2d5a3d;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.greeting-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.signature {
+  margin-top: 3rem;
+  text-align: right;
+}
+
+.signature p {
+  margin-bottom: 0.5rem;
+}
+
+.signature-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d5a3d;
+}
+
+/* 経歴タイムライン */
+.career-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.career-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.timeline-item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 60px;
+  width: 2px;
+  height: calc(100% + 20px);
+  background: #7fb069;
+}
+
+.timeline-year {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #7fb069;
+  text-align: right;
+  padding-top: 0.5rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  color: #2d5a3d;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* サービス詳細ページ */
+.service-detail-section {
+  padding: 80px 0;
+}
+
+.service-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.service-detail-text h3 {
+  font-size: 1.6rem;
+  color: #2d5a3d;
+  margin-bottom: 1.5rem;
+}
+
+.service-detail-text h4 {
+  font-size: 1.3rem;
+  color: #2d5a3d;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-detail-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.playtime-schedule {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-weight: 700;
+  color: #7fb069;
+  min-width: 120px;
+}
+
+.schedule-desc {
+  color: #555;
+}
+
+.benefit-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.benefit-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  color: #555;
+}
+
+.benefit-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #7fb069;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.service-detail-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* サービス詳細グリッド */
+.services-list-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.services-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-detail-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-detail-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-detail-card h3 {
+  font-size: 1.3rem;
+  color: #2d5a3d;
+  margin-bottom: 1rem;
+}
+
+.service-detail-card p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.service-detail-card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.service-detail-card li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.service-detail-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7fb069;
+  font-weight: bold;
+}
+
+/* 料金テーブル */
+.pricing-detail-section {
+  padding: 80px 0;
+}
+
+.pricing-table {
+  overflow-x: auto;
+  margin-bottom: 3rem;
+}
+
+.pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-table th {
+  background: #2d5a3d;
+  color: white;
+  padding: 1.2rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.pricing-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* 追加サービス */
+.additional-services {
+  margin-top: 3rem;
+}
+
+.additional-services h3 {
+  font-size: 1.6rem;
+  color: #2d5a3d;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.option-item {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.option-item h4 {
+  font-size: 1.1rem;
+  color: #2d5a3d;
+  margin-bottom: 0.5rem;
+}
+
+.option-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #7fb069;
+}
+
+/* ご利用の流れ */
+.flow-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.flow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.flow-step {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 200px;
+  max-width: 220px;
+  text-align: center;
+}
+
+.flow-number {
+  background: #7fb069;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.flow-step h3 {
+  font-size: 1.2rem;
+  color: #2d5a3d;
+  margin-bottom: 0.8rem;
+}
+
+.flow-step p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.flow-arrow {
+  font-size: 2rem;
+  color: #7fb069;
+  font-weight: 700;
+}
+
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
   .header-content {
@@ -391,6 +1031,10 @@ section {
 
   .nav ul {
     gap: 1rem;
+  }
+
+  .hero {
+    padding: 100px 0 60px;
   }
 
   .hero-content h2 {
@@ -414,6 +1058,52 @@ section {
   .section-title {
     font-size: 1.8rem;
   }
+
+  .page-hero {
+    padding: 120px 0 60px;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .greeting-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .greeting-image {
+    position: static;
+  }
+
+  .service-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-content {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+  }
+
+  .timeline-item:not(:last-child):after {
+    left: 50px;
+  }
+
+  .flow-steps {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .flow-step {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -424,9 +1114,6 @@ section {
   .hero {
     padding: 100px 0 60px;
   }
-  .hero-img{
-    
-  }
 
   .hero-content h2 {
     font-size: 1.7rem;
@@ -435,6 +1122,28 @@ section {
   .hero-content p {
     font-size: 1rem;
   }
+
   section {
     padding: 60px 0;
   }
+
+  .philosophy-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .brand-stats {
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-year {
+    text-align: left;
+  }
+
+  .timeline-item:not(:last-child):after {
+    display: none;
+  }
+}
